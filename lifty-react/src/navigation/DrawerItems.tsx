@@ -1,44 +1,37 @@
 import {DrawerContentScrollView} from "@react-navigation/drawer";
-import {Drawer, Switch, TouchableRipple} from "react-native-paper";
+import {Drawer} from "react-native-paper";
 import {useEffect, useState} from "react";
-import {StyleSheet, View} from "react-native";
 import {DrawerNavigationHelpers} from "@react-navigation/drawer/lib/typescript/src/types";
+
+export type RootStackParamList = {
+    Home: undefined;
+    Scan: undefined;
+    Search: undefined;
+};
 
 const drawerItemData = [
     {
         key: 1,
         label: 'Home',
-        icon: 'home'
+        icon: 'newspaper-variant-outline'
     },
     {
         key: 2,
-        label: 'Timer',
-        icon: 'clock'
+        label: 'Scan',
+        icon: 'camera'
+    },
+    {
+        key: 3,
+        label: 'Search',
+        icon: 'magnify'
     }
 ];
 
 type Props = {
     navigation: DrawerNavigationHelpers;
-    toggleTheme: () => void;
-    isDarkTheme: boolean;
 }
 
-const styles = StyleSheet.create({
-    drawerContent: {
-        flex: 1
-    },
-    preference: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingVertical: 12,
-        paddingHorizontal: 16
-    },
-    badge: {
-        alignSelf: 'center'
-    }
-});
-
-export default function DrawerItems({ navigation, toggleTheme, isDarkTheme } : Props) {
+export default function DrawerItems({ navigation } : Props) {
     const [ drawerIndex, setDrawerIndex ] = useState(0);
 
     useEffect(() => {
@@ -60,13 +53,6 @@ export default function DrawerItems({ navigation, toggleTheme, isDarkTheme } : P
                     ))
                 }
             </Drawer.Section>
-            {/*<Drawer.Section title="Preferences">*/}
-            {/*    <TouchableRipple>*/}
-            {/*        <View style={styles.preference}>*/}
-            {/*            <Switch onChange={toggleTheme} value={isDarkTheme}/>*/}
-            {/*        </View>*/}
-            {/*    </TouchableRipple>*/}
-            {/*</Drawer.Section>*/}
         </DrawerContentScrollView>
     )
 }

@@ -1,24 +1,14 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {createDrawerNavigator, DrawerContent, DrawerContentComponentProps} from '@react-navigation/drawer';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-
 import React, {createContext, useMemo, useState} from 'react';
 
-import {
-    Provider as PaperProvider,
-    DarkTheme,
-    DefaultTheme
-} from 'react-native-paper';
+import {NavigationContainer} from '@react-navigation/native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Provider as PaperProvider, DarkTheme, DefaultTheme} from 'react-native-paper';
 
-import HomeScreen from "../screens/HomeScreen";
-import TimerScreen from "../screens/TimerScreen";
-import DrawerItems from "./DrawerItems";
-import {DrawerNavigationHelpers} from "@react-navigation/drawer/lib/typescript/src/types";
-
-export type RootStackParamList = {
-    Home: undefined;
-    Timer: undefined;
-};
+import HomeScreen from "./screens/HomeScreen";
+import ScanScreen from "./screens/ScanScreen";
+import SearchScreen from "./screens/SearchScreen";
+import DrawerItems, {RootStackParamList} from "./navigation/DrawerItems";
 
 export const PreferencesContext = createContext<any>(null);
 
@@ -26,34 +16,18 @@ const CustomDarkTheme = {
     ...DarkTheme,
     colors: {
         ...DarkTheme.colors,
-        customColor: '#BADA55',
-    },
-    fonts: {
-        ...DarkTheme.fonts,
-        superLight: { ...DarkTheme.fonts['light'] },
-    },
-    userDefinedThemeProperty: '',
-    animation: {
-        ...DarkTheme.animation,
-        customProperty: 1,
-    },
+        primary: '#5f2ead',
+        accent: '#63a6ff',
+    }
 };
 
 const CustomDefaultTheme = {
     ...DefaultTheme,
     colors: {
         ...DefaultTheme.colors,
-        customColor: '#BADA55',
-    },
-    fonts: {
-        ...DefaultTheme.fonts,
-        superLight: { ...DefaultTheme.fonts['light'] },
-    },
-    userDefinedThemeProperty: '',
-    animation: {
-        ...DefaultTheme.animation,
-        customProperty: 1,
-    },
+        primary: '#5f2ead',
+        accent: '#63a6ff',
+    }
 };
 
 export default function Navigation() {
@@ -72,11 +46,12 @@ export default function Navigation() {
                     <NavigationContainer>
                         <Drawer.Navigator drawerContent={props =>
                             <PreferencesContext.Consumer>
-                                {(preferences) => <DrawerItems navigation={props.navigation} toggleTheme={preferences.toggleTheme} isDarkTheme={preferences.theme.dark}/>}
+                                {(preferences) => <DrawerItems navigation={props.navigation}/>}
                             </PreferencesContext.Consumer>
                         }>
                             <Drawer.Screen name="Home" component={HomeScreen}/>
-                            <Drawer.Screen name="Timer" component={TimerScreen}/>
+                            <Drawer.Screen name="Scan" component={ScanScreen}/>
+                            <Drawer.Screen name="Search" component={SearchScreen}/>
                         </Drawer.Navigator>
                     </NavigationContainer>
                 </PreferencesContext.Provider>

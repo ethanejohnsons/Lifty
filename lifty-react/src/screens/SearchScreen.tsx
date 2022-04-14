@@ -2,10 +2,10 @@ import {Button, Snackbar} from "react-native-paper";
 import {View, StyleSheet} from "react-native";
 import {DrawerScreenProps} from "@react-navigation/drawer";
 
-import {RootStackParamList} from "../navigation";
+import {RootStackParamList} from "../navigation/DrawerItems";
 import {useState} from "react";
 
-type TimerScreenProps = DrawerScreenProps<RootStackParamList, 'Home'>;
+type SearchScreenProps = DrawerScreenProps<RootStackParamList, 'Search'>;
 
 const styles = StyleSheet.create({
     container: {
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     }
 });
 
-export default function TimerScreen({ route, navigation }: TimerScreenProps) {
+export default function TimerScreen({ route, navigation }: SearchScreenProps) {
     const [ visible, setVisible ] = useState(false);
 
     return (
