@@ -14,10 +14,7 @@ export default class App extends Component {
 
     async componentDidMount() {
         await tf.ready();
-
-        this.setState({
-            isTfReady: true,
-        });
+        this.setState({ isTfReady: true });
     }
 
     render() {

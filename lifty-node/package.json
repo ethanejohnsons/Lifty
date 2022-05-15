@@ -1,0 +1,13 @@
+{
+  "name": "lifty-node",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node bin/www"
+  },
+  "dependencies": {
+    "express": "~4.16.1",
+    "metascraper": "^5.29.3",
+    "metascraper-image": "^5.29.3"
+  }
+}

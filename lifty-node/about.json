@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Github",
+    "subtitle": "This project is open source!",
+    "url": "https://github.com/ethanejohnsons/Lifty",
+    "imageUrl": "",
+    "icon": "github"
+  },
+  {
+    "title": "Buy me a coffee",
+    "subtitle": "Help support me and my projects.",
+    "url": "https://www.buymeacoffee.com/EthanJohnson",
+    "imageUrl": "",
+    "icon": "coffee"
+  }
+]

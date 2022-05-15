@@ -22,6 +22,7 @@
     "@react-native-async-storage/async-storage": "react-native-async-storage/async-storage",
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/drawer": "^6.4.1",
+    "@react-navigation/material-bottom-tabs": "^6.2.1",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
     "@tensorflow-models/mobilenet": "^2.1.0",
