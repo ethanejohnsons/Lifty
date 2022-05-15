@@ -6,6 +6,68 @@
 	},
 	"item": [
 		{
+			"name": "Data",
+			"item": [
+				{
+					"name": "Exercise",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}data/exercise",
+							"host": [
+								"{{base_url}}data"
+							],
+							"path": [
+								"exercise"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Equipment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}data/equipment?title=\"Treadmill\"",
+							"host": [
+								"{{base_url}}data"
+							],
+							"path": [
+								"equipment"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "\"Treadmill\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MuscleGroup",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}data/musclegroup",
+							"host": [
+								"{{base_url}}data"
+							],
+							"path": [
+								"musclegroup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "About",
 			"request": {
 				"method": "GET",

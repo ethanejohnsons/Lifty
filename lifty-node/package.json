@@ -8,6 +8,7 @@
   "dependencies": {
     "express": "~4.16.1",
     "metascraper": "^5.29.3",
-    "metascraper-image": "^5.29.3"
+    "metascraper-image": "^5.29.3",
+    "pg": "^8.7.3"
   }
 }
